@@ -18,7 +18,11 @@ hide_edge_borders none
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
-
+#Resize windows
+bindsym $mod+Shift+Right resize shrink width 1 px or 1 ppt
+bindsym $mod+Shift+Up resize grow height 1 px or 1 ppt
+bindsym $mod+Shift+Down resize shrink height 1 px or 1 ppt
+bindsym $mod+Shift+Left resize grow width 1 px or 1 ppt
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:URWGothic-Book 11
@@ -91,10 +95,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+a move left
+#bindsym $mod+Shift+s move down
+#bindsym $mod+Shift+w move up
+#bindsym $mod+Shift+d move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -282,7 +286,7 @@ exec_always --no-startup-id fix_xcursor
 # Change the variable name at the place you want to match the color
 # of your terminal like this:
 # [example]
-# If you want your bar to have the same background color as your 
+# If you want your bar to have the same background color as your
 # terminal background change the line 362 from:
 # background #14191D
 # to:
@@ -319,8 +323,7 @@ bar {
 	i3bar_command i3bar
 	status_command i3status
 	position top
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+	## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
 #	tray_output eDP1
 
@@ -330,9 +333,9 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #470082  
-        statusline #920a3c  
-        separator  #00ff55 
+        background #434040
+        statusline #ffffff
+        separator  #000000
 
 #                      border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
@@ -348,11 +351,11 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused          #2F3D44 #556064 #80FFF9 #f700ff
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.placeholder      #000000 #0c0c0c #ffffff #000000
 
   client.background       #2B2C2B
 
@@ -370,11 +373,11 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps off
+#smart_gaps off
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders off
+#smart_borders off
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
